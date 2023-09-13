@@ -2,10 +2,11 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package com.sirshande;
+package com.sirshande.guiado;
 
 
-import com.sirshande.Empleados;
+import com.sirshande.guiado.Empleados;
+import com.sirshande.TextPrompt;
 
 /**
  *
