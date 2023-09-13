@@ -4,49 +4,16 @@
  */
 package com.sirshande;
 
+
+import com.sirshande.Empleados;
+
 /**
  *
  * @author Administrator
  */
 public class EmpleadosFrm extends javax.swing.JFrame {
-    //Atributos
-    String codigo;
-    String nombre;
-    String area;
-    double sueldoBase;
-    double horasExtras;
-    String tipo_seg;
-    //Valores comunes a todos  los objetos
-    private static double porc_Afp=0.11;
-    private static double porc_Snp=0.06;
-    private static double porc_Essalud=0.03;
-    private static int contador=0;
-    //Constructor
-
-    public EmpleadosFrm(String codigo, String nombre, String area, double sueldoBase, double horasExtras, String tipo_seg) {
-        contador++; //contando la cantidad de empleados generados con la clase
-        //actualizando la informacion de los atributos de la clase
-        this.codigo = codigo;
-        this.nombre = nombre;
-        this.area = area;
-        this.sueldoBase = sueldoBase;
-        this.horasExtras = horasExtras;
-        this.tipo_seg = tipo_seg;
-    }
-    //********************METODO ADICIONAL**********************
-    //Calculando el monto  extra
-    public double montoExtra(){
-        return sueldoBase * horasExtras  / 240;
-    }
-    //Calculando el monto de seguro
-    public double montoSeguro(){
-        if(tipo_seg.equalsIgnoreCase("AFP 💼"))
-            return sueldoBase * porc_Afp;
-        if(tipo_seg.equalsIgnoreCase("SNP 🏦"))
-            return sueldoBase * porc_Snp;
-        return 0;
-    }
-    //Calculando el sueldo Neto
+    //Declaracion de variables globales
+    Empleados empleado; //Objeto empleado de la clase Empleados
 
     /**
      * Creates new form Empleados
@@ -110,14 +77,20 @@ public class EmpleadosFrm extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel1.setText("Uso de Clases, Objetos, atributos  y Métodos");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
+
+        jtNombre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtNombreActionPerformed(evt);
+            }
+        });
         jPanel1.add(jtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 150, -1));
         jPanel1.add(jtsueldoBase, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 150, -1));
         jPanel1.add(jthorasExtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 150, -1));
 
-        jcbAreaLaboral.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ÁREA  🏢", "SISTEMAS 💻", "ADMINISTRACIÓN 📊", "MARKETING  📈" }));
+        jcbAreaLaboral.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECCIONAR", "SISTEMAS", "ADMINISTRACION", "MARKETING" }));
         jPanel1.add(jcbAreaLaboral, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 70, -1, -1));
 
-        jcbSeguro.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "TIPO DE SEGURO 🏥", "SNP 🏦", "AFP 💼" }));
+        jcbSeguro.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECCIONAR", "AFP", "SNP" }));
         jPanel1.add(jcbSeguro, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 100, 150, -1));
 
         jtaSalida.setColumns(20);
@@ -133,6 +106,11 @@ public class EmpleadosFrm extends javax.swing.JFrame {
         jButton1.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/com/sirshande/imagenes/createOriginal.png"))); // NOI18N
         jButton1.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/com/sirshande/imagenes/createCopy.png"))); // NOI18N
         jButton1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
         jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 450, 100, 110));
 
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/sirshande/imagenes/viewOriginal.png"))); // NOI18N
@@ -142,6 +120,11 @@ public class EmpleadosFrm extends javax.swing.JFrame {
         jButton2.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/com/sirshande/imagenes/viewOriginal.png"))); // NOI18N
         jButton2.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/com/sirshande/imagenes/viewCopy.png"))); // NOI18N
         jButton2.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
         jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 460, -1, -1));
 
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/sirshande/imagenes/clearOriginal.png"))); // NOI18N
@@ -151,6 +134,11 @@ public class EmpleadosFrm extends javax.swing.JFrame {
         jButton3.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/com/sirshande/imagenes/clearOriginal.png"))); // NOI18N
         jButton3.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/com/sirshande/imagenes/clearCopy.png"))); // NOI18N
         jButton3.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
         jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 450, -1, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 470, 580));
@@ -163,6 +151,55 @@ public class EmpleadosFrm extends javax.swing.JFrame {
         // TODO add your handling code here:
         System.exit(0);
     }//GEN-LAST:event_jtCerrarActionPerformed
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        
+        //Capturando la informacion de los empleados de los objetos del formulario
+        String cod=jtCodigo.getText();
+        String nom=jtNombre.getText();
+        String seguro=jcbSeguro.getSelectedItem().toString();
+        double sueldo=Double.parseDouble(jtsueldoBase.getText());
+        double h_extras=Double.parseDouble(jthorasExtras.getText());
+        String area=jcbAreaLaboral.getSelectedItem().toString();
+        //Creando el objeto empleado de la clase Empleados
+        empleado= new Empleados(cod,area,area,sueldo,h_extras,seguro);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        // TODO add your handling code here:
+        //Extrayendo la informacion de los atributos y metodos de la clase
+        jtaSalida.append("Objeto Número     : "+ Empleados.getContador()+"\n");
+        jtaSalida.append("Codigo            : "+ empleado.codigo+"\n");
+        jtaSalida.append("Nombre            : "+ empleado.nombre.toUpperCase()+"\n");
+        jtaSalida.append("Seguro            : "+ empleado.tipo_seg+"\n");
+        jtaSalida.append("Sueldo base       : "+ empleado.sueldoBase+"\n");
+        jtaSalida.append("Horas Extras      : "+ empleado.horasExtras+"\n");
+        jtaSalida.append("Area              : "+ empleado.area.toUpperCase()+"\n");
+        jtaSalida.append("Monto Extra       : "+ empleado.montoHExtras()+"\n");
+        jtaSalida.append("Monto Seguro      : "+ empleado.montoSeguro()+"\n");
+        jtaSalida.append("Monto Essalud     : "+ empleado.montoEssalud()+"\n");
+        jtaSalida.append("Monto de Descuentos       : "+ empleado.montoDescuentos()+"\n");
+        jtaSalida.append("Sueldo bruto      : "+ empleado.sueldoBruto()+"\n");
+        jtaSalida.append("Sueldo Neto       : "+ empleado.sueldoNeto()+"\n");
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+        //Limpiando los objetos
+        jtCodigo.setText("");
+        jtNombre.setText("");
+        jcbSeguro.setSelectedItem(0);
+        jtsueldoBase.setText("");
+        jthorasExtras.setText("");
+        jcbAreaLaboral.setSelectedItem(0);
+        jtCodigo.requestFocus();
+        jtaSalida.setText("");
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jtNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtNombreActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtNombreActionPerformed
 
     /**
      * @param args the command line arguments
