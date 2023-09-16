@@ -47,9 +47,9 @@ public class EmpleadosFrm extends javax.swing.JFrame {
         jcbSeguro = new javax.swing.JComboBox<>();
         jScrollPane1 = new javax.swing.JScrollPane();
         jtaSalida = new javax.swing.JTextArea();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        jbCrear = new javax.swing.JButton();
+        jbMostrar = new javax.swing.JButton();
+        jbLimpiar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(102, 255, 255));
@@ -100,47 +100,47 @@ public class EmpleadosFrm extends javax.swing.JFrame {
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, 430, 220));
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/sirshande/imagenes/createOriginal.png"))); // NOI18N
-        jButton1.setText("Crear Objeto");
-        jButton1.setContentAreaFilled(false);
-        jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton1.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/com/sirshande/imagenes/createOriginal.png"))); // NOI18N
-        jButton1.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/com/sirshande/imagenes/createCopy.png"))); // NOI18N
-        jButton1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        jbCrear.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/sirshande/imagenes/createOriginal.png"))); // NOI18N
+        jbCrear.setText("Crear Objeto");
+        jbCrear.setContentAreaFilled(false);
+        jbCrear.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jbCrear.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/com/sirshande/imagenes/createOriginal.png"))); // NOI18N
+        jbCrear.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/com/sirshande/imagenes/createCopy.png"))); // NOI18N
+        jbCrear.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jbCrear.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                jbCrearActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 450, 100, 110));
+        jPanel1.add(jbCrear, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 450, 100, 110));
 
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/sirshande/imagenes/viewOriginal.png"))); // NOI18N
-        jButton2.setText("Mostrar Info del Objeto");
-        jButton2.setContentAreaFilled(false);
-        jButton2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton2.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/com/sirshande/imagenes/viewOriginal.png"))); // NOI18N
-        jButton2.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/com/sirshande/imagenes/viewCopy.png"))); // NOI18N
-        jButton2.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        jbMostrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/sirshande/imagenes/viewOriginal.png"))); // NOI18N
+        jbMostrar.setText("Mostrar Info del Objeto");
+        jbMostrar.setContentAreaFilled(false);
+        jbMostrar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jbMostrar.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/com/sirshande/imagenes/viewOriginal.png"))); // NOI18N
+        jbMostrar.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/com/sirshande/imagenes/viewCopy.png"))); // NOI18N
+        jbMostrar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jbMostrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                jbMostrarActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 460, -1, -1));
+        jPanel1.add(jbMostrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 460, -1, -1));
 
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/sirshande/imagenes/clearOriginal.png"))); // NOI18N
-        jButton3.setText("Limpiar");
-        jButton3.setContentAreaFilled(false);
-        jButton3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton3.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/com/sirshande/imagenes/clearOriginal.png"))); // NOI18N
-        jButton3.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/com/sirshande/imagenes/clearCopy.png"))); // NOI18N
-        jButton3.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        jbLimpiar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/sirshande/imagenes/clearOriginal.png"))); // NOI18N
+        jbLimpiar.setText("Limpiar");
+        jbLimpiar.setContentAreaFilled(false);
+        jbLimpiar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jbLimpiar.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/com/sirshande/imagenes/clearOriginal.png"))); // NOI18N
+        jbLimpiar.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/com/sirshande/imagenes/clearCopy.png"))); // NOI18N
+        jbLimpiar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jbLimpiar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                jbLimpiarActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 450, -1, -1));
+        jPanel1.add(jbLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 450, -1, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 470, 580));
 
@@ -152,7 +152,7 @@ public class EmpleadosFrm extends javax.swing.JFrame {
         // TODO add your handling code here:
         System.exit(0);
     }//GEN-LAST:event_jtCerrarActionPerformed
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void jbCrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbCrearActionPerformed
         // TODO add your handling code here:
         
         //Capturando la informacion de los empleados de los objetos del formulario
@@ -164,9 +164,9 @@ public class EmpleadosFrm extends javax.swing.JFrame {
         String area=jcbAreaLaboral.getSelectedItem().toString();
         //Creando el objeto empleado de la clase Empleados
         empleado= new Empleados(cod,area,area,sueldo,h_extras,seguro);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_jbCrearActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void jbMostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbMostrarActionPerformed
         // TODO add your handling code here:
         // TODO add your handling code here:
         //Extrayendo la informacion de los atributos y metodos de la clase
@@ -183,9 +183,9 @@ public class EmpleadosFrm extends javax.swing.JFrame {
         jtaSalida.append("Monto de Descuentos       : "+ empleado.montoDescuentos()+"\n");
         jtaSalida.append("Sueldo bruto      : "+ empleado.sueldoBruto()+"\n");
         jtaSalida.append("Sueldo Neto       : "+ empleado.sueldoNeto()+"\n");
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_jbMostrarActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void jbLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbLimpiarActionPerformed
         // TODO add your handling code here:
         //Limpiando los objetos
         jtCodigo.setText("");
@@ -196,7 +196,7 @@ public class EmpleadosFrm extends javax.swing.JFrame {
         jcbAreaLaboral.setSelectedItem(0);
         jtCodigo.requestFocus();
         jtaSalida.setText("");
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_jbLimpiarActionPerformed
 
     private void jtNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtNombreActionPerformed
         // TODO add your handling code here:
@@ -239,12 +239,12 @@ public class EmpleadosFrm extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JButton jbCrear;
+    private javax.swing.JButton jbLimpiar;
+    private javax.swing.JButton jbMostrar;
     private javax.swing.JComboBox<String> jcbAreaLaboral;
     private javax.swing.JComboBox<String> jcbSeguro;
     private javax.swing.JButton jtCerrar;
